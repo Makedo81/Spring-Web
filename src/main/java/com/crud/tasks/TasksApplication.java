@@ -13,13 +13,12 @@ public class TasksApplication {
 				(long)1,
 				"Test title",
 				"I want to be a coder");
-		Long iD = taskDto.getID();
+		Long id = taskDto.getId();
 		String title = taskDto.getTitle();
 		String content = taskDto.getContent();
 
-		System.out.println(iD + "" + "" + content);
+		System.out.println(id + "" + "" + content);
 
 		SpringApplication.run(TasksApplication.class, args);
 	}
-
 }
