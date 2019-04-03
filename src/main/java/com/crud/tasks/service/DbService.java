@@ -17,9 +17,9 @@ public class DbService {
     private TaskRepository repository;
 
     public List<Task>getAllTasks(){
-        List<Task>a = repository.findAll();
-        System.out.println(a.size());
-        return a;
+        List<Task> taskList = repository.findAll();
+        System.out.println(taskList.size());
+        return taskList;
     }
 
     public Task getTask(final Long id){
