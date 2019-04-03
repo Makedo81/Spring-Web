@@ -43,5 +43,4 @@ public class TaskController {
     public void deleteTask(@RequestParam Long id){
         dbService.deleteTask(id);
     }
-
 }

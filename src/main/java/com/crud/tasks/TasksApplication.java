@@ -8,7 +8,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 @SpringBootApplication
 public class TasksApplication {//extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
         SpringApplication.run(TasksApplication.class, args);
     }
