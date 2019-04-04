@@ -16,6 +16,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.Optional.ofNullable;
 
@@ -42,12 +43,7 @@ public class TrelloClient {
 
     public List<TrelloBoardDto> getTrelloBoards() {
         TrelloBoardDto[] boardsResponse = restTemplate.getForObject(buildUrl(), TrelloBoardDto[].class);
-        try {
-            return Arrays.asList(ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
-        } catch (RestClientException e) {
-            LOGGER.error(e.getMessage(), e);
-            return new ArrayList<>();
-        }
+        return Optional.of(Arrays.asList(boardsResponse)).orElse(new ArrayList<>());
     }
 
     public CreatedTrelloCard createNewCard(TrelloCardDto trelloCardDto) {
