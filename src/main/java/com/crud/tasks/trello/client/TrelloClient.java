@@ -24,11 +24,12 @@ public class TrelloClient {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TrelloClient.class);
 
-    @Autowired
-    private RestTemplate restTemplate;
 
     @Autowired
     private TrelloConfig trelloConfig;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     private URI buildUrl() {
         URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/username/boards")
