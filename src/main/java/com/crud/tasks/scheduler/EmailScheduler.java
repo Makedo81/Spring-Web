@@ -13,25 +13,22 @@ public class EmailScheduler {
 
     @Autowired
     private SimpleEmailService simpleEmailService;
-
     @Autowired
     private AdminConfig adminConfig;
-
     @Autowired
     private TaskRepository taskRepository;
 
-    private static final String SUBJECT = "Task: New trello card";
+    private static final String SUBJECT = "Task: Once a day email";
 
-//    @Scheduled(cron = " 0 0 10 * * * ")
-    @Scheduled(fixedDelay = 10000)
+//  @Scheduled(fixedDelay = 50000)
+    @Scheduled(cron = " 00 10 * * * * ")
     public void sendInformationEmail() {
-
         long size = taskRepository.count();
-
         simpleEmailService.send
-                (
-                        new Mail(adminConfig.getAdminMail(),
-                                SUBJECT,"Currently in database you got "
-                                + size + "tasks",""));
+                (new Mail(adminConfig.getAdminMail(),
+                                SUBJECT,
+                                "Currently in database you got "
+                                + size + " tasks ",
+                                ""));
     }
 }
