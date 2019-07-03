@@ -24,6 +24,7 @@ repositories {
 }
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-mail:2.1.2.RELEASE')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	testCompile ('org.springframework.boot:spring-boot-starter-test')
 	compileOnly (group: 'org.projectlombok', name: 'lombok', version: '1.18.6')
 	compile ('org.springframework.boot:spring-boot-starter-web')
@@ -31,8 +32,8 @@ dependencies {
 //	compile ('org.postgresql:postgresql')
    	compile (group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa')
 //	providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
-//	compile ('com.google.code.gson:gson:2.8.5')
-    compile ('org.springframework.boot:spring-boot-starter-actuator')
+	compile ('com.google.code.gson:gson:2.8.5')
+//    compile ('org.springframework.boot:spring-boot-starter-actuator')
 //SWAGGER
 	compile ('io.springfox:springfox-swagger2:2.7.0')
 	compile (group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0')
