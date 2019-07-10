@@ -10,5 +10,5 @@ public class Mail {
     String mailTo;
     String subject;
     String message;
-    String toCc;
+   // String toCc;
 }
